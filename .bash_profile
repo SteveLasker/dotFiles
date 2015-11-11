@@ -6,6 +6,7 @@ code() {
     VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $*
 }
 
+# Change the docker host using docker-machine
 switchDockerHost() {
     if [ $# -eq 0 ]; then
         eval $(docker-machine env default);
