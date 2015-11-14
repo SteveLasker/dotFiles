@@ -1,0 +1,19 @@
+azure vm endpoint create DockerDemoUS 80 80
+azure vm endpoint create DockerDemoUS 3000 3000
+azure vm endpoint create DockerDemoUS 8080 8080
+azure vm endpoint create DockerDemoUS 8081 8081
+azure vm endpoint create DockerDemoUS 8082 8082
+azure vm endpoint create DockerDemoUS 8083 8083
+azure vm endpoint create DockerDemoUS 8084 8084
+azure vm endpoint create DockerDemoUS 8085 8085
+azure vm endpoint create DockerDemoUS 8086 8086
+
+azure vm endpoint create DockerDemoEU 80 80
+azure vm endpoint create DockerDemoEU 3000 3000
+azure vm endpoint create DockerDemoEU 8080 8080
+azure vm endpoint create DockerDemoEU 8081 8081
+azure vm endpoint create DockerDemoEU 8082 8082
+azure vm endpoint create DockerDemoEU 8083 8083
+azure vm endpoint create DockerDemoEU 8084 8084
+azure vm endpoint create DockerDemoEU 8085 8085
+azure vm endpoint create DockerDemoEU 8086 8086
