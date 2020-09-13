@@ -1,28 +1,31 @@
-export GOPATH=$HOME/Source
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
+# ~/.profile: executed by the command interpreter for login shells.
+# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
+# exists.
+# see /usr/share/doc/bash/examples/startup-files for examples.
+# the files are located in the bash-doc package.
 
-code() {
-    VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $*
-}
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+#umask 022
 
-# Change the docker host using docker-machine
-switchDockerHost() {
-    if [ $# -eq 0 ]; then
-        eval $(docker-machine env default);
-    else
-        eval $(docker-machine env $@);
-    fi;
-    echo $(export | grep DOCKER_HOST)
-}
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
+    fi
+fi
 
-drc() {
-    docker stop $(docker ps -a -q)
-    docker rm $(docker ps -a -q)
-}
-dri(){
-    docker rmi $(docker images -a -q)
-}
-reload() {
- source ~/.bash_profile
-}
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+export GPG_TTY=$(tty)
+export PATH=$PATH:/usr/local/go/bin
+
+cd go/src/github.com//stevelasker/
